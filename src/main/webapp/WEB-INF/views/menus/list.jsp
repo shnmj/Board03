@@ -54,13 +54,13 @@
 					[<a href="/Menus/WriteForm">메뉴 등록</a>]
 				</td>
 			</tr>
-			<c:forEach var="menu" items="${menuList}" >  <!-- c: =  별도의 dtd 필요 -->
+			<c:forEach var="menu" items="${menuList}" >  <!-- c: =  -->
 			<tr>
 				<td>${menu.menu_id}</td>
 				<td>${menu.menu_name}</td>
 				<td>${menu.menu_seq}</td>
-				<td><a href="수정"></a></td>
-				<td><a href="삭제"></a></td>
+				<td><a href="">수정</a></td>
+				<td><a href="/Menus/Delete?menu_id=${menu.menu_id}">삭제</a></td>
 			</tr>
 			</c:forEach>
 		</table>
