@@ -79,13 +79,37 @@ public class MenuController {
 		return "redirect:/Menus/List";
 	}
 	
-	
 	// =================================================
 	
+	// Menu Update
+	// /Menus/UpdateForm?menu_id=${menu.menu_id}
+	@RequestMapping("/UpdateForm")
+	public String updateForm(MenuVo menuVo) {
+		
+		// 수정 할 데이터 menu_id 조회
+		
+		// 조회한 내용을 model에 담음
+		return "menus/update";
+	}
+	
+	
+	// /Menus/Update
+	@RequestMapping("/Update")
+	public String update(MenuVo menuVo) {
+		
+		// 수정
+		
+		
+		// 수정 후 조회
+		return "redirect:/Menus/List";
+	}
+	
+	
+	// ==================================================
 	
 	// Menu Del /Menus/Delete?menu_id=MENU03
 	@RequestMapping("/Delete")
-	@ResponseBody  // ------------- 이해 필요
+	@ResponseBody  // 주소가 아닌 나머지를 보낼 때 사용.
 	public String delete(MenuVo menuVo) {
 		
 		menuMapper.deleteMenu(menuVo);
