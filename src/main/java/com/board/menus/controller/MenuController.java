@@ -32,6 +32,8 @@ public class MenuController {
 		
 	}
 	
+	// ============================================
+	
 	// Menu 입력받는 화면 // /Menus/WriteForm
 	// @RequestMapping("/Menus/WriteForm")
 	@RequestMapping("/WriteForm")
@@ -60,7 +62,28 @@ public class MenuController {
 		*/
 	}
 	
-	// Menu 삭제 /Menus/Delete?menu_id=MENU03
+	// ===================================================
+	
+	// /Menus/WriteForm2
+	@RequestMapping("/WriteForm2")
+	public String writeForm2() {
+		return "menus/write2";
+	}
+	
+	@RequestMapping("/Write2")
+	public String write2(MenuVo menuVo) {
+		// Commit
+		menuMapper.insertMenu2(menuVo);
+		
+		// 조회로 이동
+		return "redirect:/Menus/List";
+	}
+	
+	
+	// =================================================
+	
+	
+	// Menu Del /Menus/Delete?menu_id=MENU03
 	@RequestMapping("/Delete")
 	@ResponseBody  // ------------- 이해 필요
 	public String delete(MenuVo menuVo) {
@@ -68,18 +91,16 @@ public class MenuController {
 		menuMapper.deleteMenu(menuVo);
 		
 		String html = "<script>";
-		html       +="alert('삭제됐습니다');";
+		html       +="alert('Delete Complete');";
 		html       +="location.href='/Menus/List';";
 		html       +="</script>";
 		return html;
 		
 	}
 	
-	
 
-	
 	/*
-	// Menu 삭제 /Menus/Delete?menu_id=MENU03
+	// Menu Del /Menus/Delete?menu_id=MENU03
 	@RequestMapping("/Delete")
 	public String delete(MenuVo menuVo, Model model) {
 		

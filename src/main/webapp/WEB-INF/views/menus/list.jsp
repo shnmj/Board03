@@ -51,7 +51,8 @@
 			</tr>
 			<tr>
 				<td colspan="5">
-					[<a href="/Menus/WriteForm">메뉴 등록</a>]
+					[<a href="/Menus/WriteForm">메뉴 등록</a>]&nbsp;&nbsp;&nbsp;
+					[<a href="/Menus/WriteForm2">메뉴 등록2</a>]
 				</td>
 			</tr>
 			<c:forEach var="menu" items="${menuList}" >  <!-- c: =  -->

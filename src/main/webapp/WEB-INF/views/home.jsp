@@ -13,6 +13,7 @@
 	<main>
 		<h2>HOME</h2>
 		<div><a href="/Menus/WriteForm">새 메뉴 추가</a></div> 
+		<div><a href="/Menus/WriteForm2">새 메뉴 추가2</a></div> 
 		<div><a href="Menus/List">메뉴 목록</a></div>
 	</main>	
 </body>
