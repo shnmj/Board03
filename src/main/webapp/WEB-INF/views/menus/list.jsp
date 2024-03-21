@@ -12,7 +12,7 @@
 <script src="https://cdn.jsdelivr.net/npm/browser-scss@1.0.3/dist/browser-scss.min.js"></script>
 <style>
 	td {
-			padding 	 : 10px;  
+			padding 	 : 15px;  
 			width   	 : 150px;
 			text-align : center; 
 			}
