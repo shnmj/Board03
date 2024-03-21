@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.board.menus.domain.MenuVo;
 import com.board.menus.mapper.MenuMapper;
@@ -61,12 +62,33 @@ public class MenuController {
 	
 	// Menu 삭제 /Menus/Delete?menu_id=MENU03
 	@RequestMapping("/Delete")
+	@ResponseBody  // ------------- 이해 필요
+	public String delete(MenuVo menuVo) {
+		
+		menuMapper.deleteMenu(menuVo);
+		
+		String html = "<script>";
+		html       +="alert('삭제됐습니다');";
+		html       +="location.href='/Menus/List';";
+		html       +="</script>";
+		return html;
+		
+	}
+	
+	
+
+	
+	/*
+	// Menu 삭제 /Menus/Delete?menu_id=MENU03
+	@RequestMapping("/Delete")
 	public String delete(MenuVo menuVo, Model model) {
 		
 		// MENU03 delete
 		menuMapper.deleteMenu(menuVo);
 		
 		return "redirect:/Menus/List";
+		*/
+	
 		
 		/*
 		// 재조회해서 model에 담는다
@@ -76,7 +98,6 @@ public class MenuController {
 		// 이동할 파일
 		return "menus/list";
 		*/
-	}
 	
 	
 	
