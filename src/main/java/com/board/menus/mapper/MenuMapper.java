@@ -18,4 +18,6 @@ public interface MenuMapper {
 
 	void insertMenu2(MenuVo menuVo);
 
+	MenuVo getMenu(String menu_id);
+
 }
