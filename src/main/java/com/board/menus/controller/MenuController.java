@@ -99,15 +99,16 @@ public class MenuController {
 	}
 	
 	
-	// /Menus/Update
+	// /Menus/Update?menu_id=MENU07&menu_name=ddds&menu_seq=7
 	@RequestMapping("/Update")
 	public String update(MenuVo menuVo) {
 		
 		// 수정
-		
+		menuMapper.updateMenu(menuVo);
 		
 		// 수정 후 조회
 		return "redirect:/Menus/List";
+		
 	}
 	
 	
